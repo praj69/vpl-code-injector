@@ -21,20 +21,21 @@ A Chrome extension that injects code templates directly into the **VPL ACE Edito
 1. Clone the repository:
    ```bash
    git clone https://github.com/praj69/vpl-code-injector.git
-   and 
-   build the dist file using - npm run build
 
-2. Open Chrome and go to:chrome://extensions
+2. Build the dist folder:
+   ```bash
+   npm run build
 
-3. Enable Developer Mode (top right)
+3. Open Chrome and go to:chrome://extensions
 
-4. Click Load unpacked
+4. Enable Developer Mode (top right)
 
-5. Select the dist folder
+5. Click Load unpacked
+
+6. Select the dist folder
 
 ## Tech Stack
 
-- React + vite
 - JavaScript
 - Chrome Extensions API (Manifest V3)
 - ACE Editor API
