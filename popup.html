@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>VPL Code Injector</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+
+    <style>
+      /* Reset & base styles */
+      html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #1E1E2F;
+        color: #ECECEC;
+        font-family: 'Inter', sans-serif;
+        min-height: 100vh;
+        overflow: visible;
+        box-sizing: border-box;
+      }
+
+      /* Wrapper for content to handle border-radius & padding */
+      .popup-wrapper {
+        border-radius: 6px;
+        padding: 1px 1px 1px 1px; /* extra bottom padding to avoid clipping */
+        background-color: #1E1E2F;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="popup-wrapper">
+      <div id="root">Loading...</div>
+    </div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+
+
+

@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Test Version 3 React",
+  "description": "Converted to React + Vite",
+  "version": "1.0",
+  "permissions": ["scripting", "storage", "activeTab"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "128": "icon.png"
+  },
+  "host_permissions": ["<all_urls>"]
+}

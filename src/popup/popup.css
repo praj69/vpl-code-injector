@@ -1,0 +1,308 @@
+@keyframes fadeInOverlay {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleInModal {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+body {
+  font-family: sans-serif;
+}
+.custom-select {
+  background-color: #000;
+  color: white;
+  border: 1px solid #38fffe;
+  border-radius: 6px;
+  padding: 0.4rem;
+  font-weight: 500;
+  transition: all 0.3s;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23ffffff' stroke-width='2'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.6rem center;
+  background-size: 0.7rem;
+  padding-right: 2rem; /* space for arrow */
+  cursor: pointer;
+  min-width: 180px;  /* increase width */
+}
+
+/* Option styling */
+.custom-select option {
+  background-color: #000;
+  color: white;
+}
+
+/* Remove blue outline on focus */
+.custom-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #38fffe;
+}
+/*from*/
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeInOverlay 0.3s ease;
+}
+
+/* Modal Dialog */
+.modal {
+  background-color: #000000;
+  color: grey;
+  padding: 1.2rem;
+  border-radius: 10px;
+  border: 1px solid #38fffe;
+  width: 300px;
+  box-shadow: 0 0 7px rgba(7, 231, 219, 0.52);
+  font-size: 0.9rem;
+  animation: scaleInModal 0.35s ease;
+  transition: all 0.3s ease;
+}
+
+.modal h4 {
+  margin-top: 0;
+  color: white;
+  text-align: center;
+  text-decoration: underline;
+  font-size: 0.95rem;
+}
+
+.modal ul {
+  padding-left: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.modal .close-button {
+  background-color: transparent;
+  color: white;
+  border: 1px solid #e41b1e;
+  border-radius: 6px;
+  padding: 0.5rem;
+  font-weight: bold;
+  width: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 7px rgba(251, 25, 25, 0.5);
+}
+
+.modal .close-button:hover {
+  background-color: #e41b1e;
+  color: #000;
+}
+
+/* Main Container */
+.popup-container {
+  padding: 1rem;
+  width: 360px;
+  font-family: 'Courier New', monospace;
+  background-color: #000000;
+  color: #38fffe;
+  border-radius: 6px;
+  border: 1px solid #38fffe;
+  box-shadow: 0 0 15px rgba(7, 231, 219, 0.62);
+}
+
+/* Logo */
+.popup-logo {
+  width: auto;
+  height: 80px;
+  margin: 0 auto 0.5rem auto;
+  display: block;
+}
+
+/* Help Button */
+.help-btn {
+  background: none;
+  border: none;
+  color: #4FC3F7;
+  cursor: pointer;
+  font-size: 0.85rem;
+  text-decoration: underline;
+}
+.site-toggle-btn {
+  flex: 1;
+  padding: 0.4rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+  font-family: 'Courier New', monospace;
+  transition: all 0.3s;
+}
+
+.site-enabled {
+  background-color: #FF1744;
+  color: #000;
+  box-shadow: 0 0 10px rgba(255, 23, 68, 0.6);
+}
+
+.site-disabled {
+  background-color: #63fbf4;
+  color: #000;
+  box-shadow: 0 0 10px rgba(11, 250, 246, 0.94);
+}
+.code-textarea {
+  width: 92%;
+  margin-bottom: 1rem;
+  background: #0d0d0d;
+  color: grey;
+  border: 1px solid #38fffe;
+  border-radius: 6px;
+  padding: 0.6rem;
+  font-family: 'Courier New', monospace;
+  font-size: 0.95rem;
+  resize: vertical;
+  overflow: auto;
+  box-shadow: inset 0 0 6px rgba(0, 255, 65, 0.2);
+}
+
+/* Buttons */
+.template-btn,
+.inject-btn,
+.toggle-btn {
+  border-radius: 6px;
+  padding: 0.4rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Courier New', monospace;
+}
+
+.template-btn {
+  background-color: transparent;
+  flex: 1;
+}
+
+.cpp-btn {
+  color: #4FC3F7;
+  border: 1px solid #4FC3F7;
+}
+
+.cpp-btn:hover {
+  background-color: #4FC3F7;
+  color: #000;
+}
+
+.java-btn {
+  color: #fb6047;
+  border: 1px solid #fb6047;
+}
+
+.java-btn:hover {
+  background-color: #fb6047;
+  color: #000;
+}
+
+.inject-btn {
+  background-color: transparent;
+  color: white;
+  padding: 0.6rem;
+  width: 40%;
+  border: 1px solid #fb19e4;
+  box-shadow: 0 0 10px rgba(190, 5, 168, 0.38);
+}
+
+.inject-btn:hover {
+  background-color: #fb19e4;
+  color: #000;
+}
+.toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding-left: 0.5rem;
+}
+
+/* Label acts as custom switch */
+.toggle-label {
+  position: relative;
+  display: inline-block;
+  width: 36px;
+  height: 18px;
+}
+
+/* Hide default checkbox */
+.toggle-input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Slider background */
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 34px;
+  background-color: #444;
+  transition: 0.3s;
+  box-shadow: inset 0 0 4px #222;
+}
+
+/* Checked state for slider */
+.toggle-input:checked + .toggle-slider {
+  background-color: #38fffe;
+  box-shadow: 0 0 7px rgba(56, 255, 254, 0.6);
+}
+
+/* Circle knob inside slider */
+.toggle-slider::before {
+  content: "";
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  left: 4px;
+  bottom: 3px;
+  background-color: #000;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+/* Move knob when checked */
+.toggle-input:checked + .toggle-slider::before {
+  transform: translateX(16px);
+}
+
+/* Label text */
+.toggle-label-text {
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 500;
+  user-select: none;
+}
+
+
+/* Footer */
+.footer {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+  font-style: oblique;
+  color: #AAAAAA;
+}
+
+.footer a {
+  color: #4a12c7;
+  opacity: 0.9;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #b922f4;
+}
+
+
